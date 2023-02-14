@@ -1,0 +1,36 @@
+1. npm init vue@latest
+
+2. npm install
+
+3. "delete its default and unnecessary files for you"
+
+4. npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+
+5. npx tailwindcss init -p --full
+ 
+6.  change 
+                            content:[], 
+    in tailwind.config.js to 
+                            content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}", ], 
+
+7. Open the main.css file inside the src folder and write this code 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+8. Add this code to the "scripts" section of package.json
+     "tailwind": "npx tailwindcss -i ./src/main.css -o ./src/output.css --watch", 
+
+9. write this command in terminal npm run tailwind
+
+10. if the output.css file is created inside the src folder everything is going fine
+
+11. Add this code to your main.js file
+            import "./output.css";
+
+12. Tailwind is now connected locally. For global installation, just index.html file
+     <script src="https://cdn.tailwindcss.com"></script>
+  code is enough, but it doesn't offer any helper words
+
+13. Now everything works!
